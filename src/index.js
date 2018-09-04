@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router } from "react-router-dom"
+import Nutshell from './components/Nutshell';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import registerServiceWorker from './registerServiceWorker';
+import './index.css';
+
+ReactDOM.render(
+    <Router>
+        <Nutshell />
+    </Router>
+    , document.getElementById('root'));
+
 registerServiceWorker();
+
