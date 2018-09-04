@@ -2,7 +2,29 @@ const remoteURL = "http://localhost:5002"
 
 
 export default Object.create(null, {
-    post: {
+
+    saveUserEntry: {
+        value: (key,object) => {
+            return fetch(`${remoteURL}/${key}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(object)
+            })
+                .then(response => response.json())
+        }
+    },
+
+    getUsers: {
+        value: (key,id) => {
+            return fetch(`${remoteURL}/${key}/${id}`).then(r => r.json())
+        }
+    },
+
+
+
+     post: {
         value: (key,object) => {
             return fetch(`${remoteURL}/${key}`, {
                 method: "POST",
@@ -15,12 +37,22 @@ export default Object.create(null, {
         }
     },
     // getting users
-    getAll: {
+    get: {
         value: (key,id) => {
             return fetch(`${remoteURL}/${key}?${id}`)
             .then(r => r.json())
         }
     },
+
+    getAll: {
+        value: (key) => {
+            return fetch(`${remoteURL}/${key}`)
+            .then(result => result.json())
+        }
+    },
+
+
+
     edit: {
         value: (key, id, object) => {
             return fetch(`${remoteURL}/${key}/${id}`, {

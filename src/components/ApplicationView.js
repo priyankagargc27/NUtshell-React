@@ -14,9 +14,22 @@ export default class ApplicationViews extends Component {
 
     state = {
 
-
+        currentView: "login",
+        activeUser: localStorage.getItem("usersId"),
         articles: []
 
+    }
+
+    setActiveUser = (val) => {
+        if (val){
+            localStorage.setItem("usersId",val)
+        }
+        else{
+            localStorage.removeItem("UsersId")
+        }
+        this.setState({
+            activeUser:val
+        })
     }
 
 

@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "email": "priyanka.g.85@gmail.com",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "email": "me@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "email": "cohort-27@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "email": "priya@gmail.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "email": "xyz@NSS.com",
+      "password": "asdfg",
+      "id": 5
+    },
+    {
+      "email": "priya@gmail.com",
+      "password": "hdjshfjsfj",
+      "id": 6
+    },
+    {
+      "email": "abc@nss.com",
+      "password": "nashviilel",
+      "id": 7
+    },
+    {
+      "email": "abc@nss.com",
+      "password": "nashviilel",
+      "id": 8
+    }
+  ]
+}
