@@ -1,25 +1,20 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom"
- import "./Article.css"
+//import { Link } from "react-router-dom"
+ import "./Event.css"
 
-export default class ArticleList extends Component {
+export default class EventList extends Component {
     render() {
         return (
             <React.Fragment>
-                <section className="articles">
+                <section className="events">
                     {
-                        this.props.articles.map(article =>
-                            <div key={article.id} className="card">
+                        this.props.events.map(event =>
+                            <div key={event.id} className="card">
                                 <div className="card-body">
-                                    <h5 className="card-title" className="article-name">
-                                        {article.title}
+                                    <h5 className="card-title" className="event-name">
+                                        {event.EventType}
                                     </h5>
-                                    <section className="card-title" className="article-Description">
-                                        {article.Description}
-                                    </section>
-                                    <h6>
-                                        <Link className="nav-link" to={`/articles/${article.url}`}> Article URL</Link>
-                                    </h6>
+                                    <time>${event.date}</time>
                                     {/* <h6>
                                         <p></p>
                                         <button type="button" className="btn btn-primary"
@@ -31,13 +26,13 @@ export default class ArticleList extends Component {
                     }
                 </section>
                 <p></p>
-                <div className="articleButton">
+                <div className="eventButton">
                     <button type="button"
                         className="btn btn-primary"
                         onClick={() => {
-                            this.props.history.push("/articles/new")
+                            this.props.history.push("/events/new")
                         }
-                        }>Create New Article
+                        }>Create New Events
                 </button>
                 </div>
             </React.Fragment>

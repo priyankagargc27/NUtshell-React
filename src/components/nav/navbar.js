@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./navbar.css"
 
 
 class NavBar extends Component {
@@ -23,13 +24,16 @@ updateSearch(event){
                         <Link className="nav-link" to="/">Message</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/article">Article</Link>
+                        <Link className="nav-link" to="/articles">Article</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/Task">Task</Link>
                     </li>
                     <li className="nav-item">
                     <Link className="nav-link" to="/Events">Events</Link>
+                    </li>
+                    <li className ="nav-item">
+                    <Link className="nav-link" to="/Logout">Logout</Link>
                     </li>
                 </ul>
                 <div>

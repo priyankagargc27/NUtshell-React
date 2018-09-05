@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Login from "./Login/Login"
+//  import Login from "./Login/Login"
 import NavBar from "./nav/NavBar"
 import ApplicationView from "./ApplicationView"
 //import App from "../App"
@@ -14,7 +14,7 @@ export default class Nutshell extends Component {
             <React.Fragment>
                 
                 <NavBar />
-                <Login />
+                {/* <Login /> */}
                 <ApplicationView />
             </React.Fragment>
         )
