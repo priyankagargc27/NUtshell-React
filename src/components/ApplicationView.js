@@ -94,7 +94,7 @@ export default class ApplicationViews extends Component {
                 }} />
                 <Route path="/events/new" render={(props) => {
                     return <EventForm {...props}
-                        addEvents={this.addEvent} />
+                        addEvents={this.addEvents} />
                 }} />
             </React.Fragment>
         )

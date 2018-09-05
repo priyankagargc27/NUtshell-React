@@ -6,9 +6,9 @@ import "./Article.css"
 export default class ArticleForm extends Component {
 
     state={
-        title: "",
-        Description:"",
-        url:""
+        title : "",
+        Description : "",
+        url : ""
     }
 
 
@@ -52,11 +52,11 @@ export default class ArticleForm extends Component {
                        placeholder="Title" />
                  </div>
                  <div className="form-group">
-                    <label htmlFor="synopsis">Description</label>
+                    <label htmlFor="description">Description</label>
                     <input type="text" required="true"
                        className="form-control"
                        onChange={this.handleFieldChange}
-                       id="synopsis" placeholder="Description" />
+                       id="Description" placeholder="Description" />
                  </div>
                  <div className="form-group">
                     <label htmlFor="url">URL</label>

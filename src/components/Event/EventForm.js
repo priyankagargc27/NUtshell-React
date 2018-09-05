@@ -48,8 +48,8 @@ export default class EventForm extends Component {
                     <input type="text" required="true"
                        className="form-control"
                        onChange={this.handleFieldChange}
-                       id="title"
-                       placeholder="Title" />
+                       id="EventType"
+                       placeholder="Event" />
                  </div>
                  {/* <div className="form-group">
                     <label htmlFor="synopsis">Description</label>
@@ -59,8 +59,8 @@ export default class EventForm extends Component {
                        id="synopsis" placeholder="Description" />
                  </div> */}
                  <div className="form-group">
-                 <label for="eventDate">Date:</label>
-                    <input required type="date" id="eventDate"
+                 <label htmlFor="eventDate">Date:</label>
+                    <input required type="date" id="date"
                        className="form-control"
                        onChange={this.handleFieldChange}
                      placeholder="EventDate" />
