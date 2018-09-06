@@ -7,6 +7,10 @@ import ArticleEditForm from './Article/ArticleEditForm'
 import EventForm from "./Event/EventForm"
 import EventList from "./Event/EventList"
 import EventEditForm from './Event/EventEditForm'
+import MessageForm from "./Message/MessageForm"
+import MessageList from "./Message/MessageList"
+import MessageEditForm from './Message/MessageEditForm'
+
 //import Joke from './Jokes/Joke'
 import React, { Component } from "react"
 import Login from './Login/Login'
@@ -24,7 +28,8 @@ export default class ApplicationViews extends Component {
         currentView: "login",
         activeUser: localStorage.getItem("usersId"),
         articles: [],
-        events:[]
+        events:[],
+        messages:[]
 
     }
 
@@ -44,6 +49,13 @@ export default class ApplicationViews extends Component {
                     events: allEvents
                 })
             })
+            APIManager.getAll("messages")
+            .then(allEvents => {
+                this.setState({
+                    events: allEvents
+                })
+            })
+
     }
 
 
@@ -94,6 +106,31 @@ export default class ApplicationViews extends Component {
             APIManager.getAll("events"))
         .then(events =>
             this.setState({ events: events })
+            )
+    }
+
+    addMessage = message => APIManager.post("messages", message)
+        .then(() => APIManager.getAll("messages"))
+        .then(messages => this.setState({
+            messages: messages
+
+        }))
+
+
+        deleteMessage = id => APIManager.Delete("messages",id)
+    .then(() => {
+        APIManager.getAll("messages")
+        .then(messages => this.setState({
+            messages: messages
+        }))
+    })
+
+    EditMessage = (id, object) => {
+        return APIManager.edit("messages", id, object)
+        .then(() => 
+            APIManager.getAll("messages"))
+        .then(messages =>
+            this.setState({ messages: messages })
             )
     }
 
@@ -160,6 +197,32 @@ export default class ApplicationViews extends Component {
                             EditEvent={this.EditEvent}/>
                              //employees={this.state.employees} />
                     }} />
+
+
+
+                    <Route exact path="/" render={(props) => {
+                    if (this.isAuthenticated()) {
+                        return <MessageList {...props}
+                            deleteMessage={this.deleteMessage}
+                            messages={this.state.messages}
+                            //EditArticle={this.EditArticle}
+                             />
+                    } else {
+                        return <Redirect to="/login" />
+                    }
+                }} />
+                <Route path="/messages/new" render={(props) => {
+                    return <MessageForm {...props}
+                        addMessage={this.addMessage} />
+                }} />
+
+                <Route path="/messages/Edit/:messageId(\d+)" render={(props) => {
+                        return <MessageEditForm {...props}
+                            messages={this.state.messages}
+                            EditMessage={this.EditMessage}/>
+                             //employees={this.state.employees} />
+                    }} />
+
             </React.Fragment>
         )
     }

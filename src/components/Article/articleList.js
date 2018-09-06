@@ -18,7 +18,10 @@ export default class ArticleList extends Component {
                                         {article.Description}
                                     </section>
                                     <h6>
-                                        <Link className="nav-link" to={`/articles/${article.url}`}>Details</Link>
+                                    <a href={`${article.url}`}>Visit the Link</a>
+
+                                    
+                                        {/* <Link className="nav-link" to={`${article.url}`}>Details</Link> */}
                                     </h6>
                                     <h6>
                                     

@@ -1,13 +1,13 @@
 import React, { Component } from "react"
-import "./Event.css"
+import "./Message.css"
 //import APIManager from "./module/APIManager"
 
 
 export default class EventForm extends Component {
 
     state={
-        EventType: "",
-        date:""
+        Messageinput: "",
+        time:""
     }
 
 
@@ -19,16 +19,34 @@ export default class EventForm extends Component {
         this.setState(stateToChange)
      }
 
-     MakeNewEvent = evt => {
+
+
+    
+
+    //  SetTime = evt(i) => {
+    //     var d = new Date(),
+    //         h = (d.getHours()<10?'0':'') + d.getHours(),
+    //         m = (d.getMinutes()<10?'0':'') + d.getMinutes();
+    //      i.value  = h + ':' + m;
+    //     }
+        
+        // <br/> 
+        // <a onclick="timeNow(test2)" href="#">SET TIME</a>
+        // <input id="test2" type="time" value="10:40"/>
+        
+    
+
+
+     MakeNewMessage = evt => {
          evt.preventDefault()
-         const event = {
-            EventType:this.state.EventType,
-             
-            date:this.state.date
+         const message = {
+            Messageinput:this.state.Messageinput,
+            time: new Date().toLocaleString()
+            //time:Date.now()
          
          
             }
-            this.props.addEvents(event, "events").then(() => this.props.history.push("/events"))
+            this.props.addMessage(message, "messages").then(() => this.props.history.push("/messages"))
 
 
 //          APIManager.post("articles", article)
@@ -41,16 +59,21 @@ export default class EventForm extends Component {
      render() {
         return (
            <React.Fragment>
-                 <h3>Events</h3>
+               <div className="messageContainer">
+                 <h3>Start Chatting</h3>
               <form className="eventForm">
                  <div className="form-group">
-                    <label htmlFor="title">Event</label>
+                    <label htmlFor="Message">Message</label>
                     <input type="text" required="true"
                        className="form-control"
                        onChange={this.handleFieldChange}
-                       id="EventType"
-                       placeholder="Event" />
+                       id="Messageinput"
+                       placeholder="Write a Message" />
                  </div>
+
+
+                 {/* <a onclick="evt" href="#">SET TIME</a>
+         <input id="evt" type="time" value="10:40"/> */}
                  {/* <div className="form-group">
                     <label htmlFor="synopsis">Description</label>
                     <input type="text" required="true"
@@ -58,13 +81,13 @@ export default class EventForm extends Component {
                        onChange={this.handleFieldChange}
                        id="synopsis" placeholder="Description" />
                  </div> */}
-                 <div className="form-group">
-                 <label for="eventDate">Date:</label>
-                    <input required type="date" id="date"
+                 {/* <div className="form-group">
+                 <label for="eventDate">Time:</label>
+                    <input required type="time" id="time"
                        className="form-control"
                        onChange={this.handleFieldChange}
-                     placeholder="EventDate" />
-                 </div>
+                     placeholder="Time" />
+                 </div> */}
                  {/* <div className="form-group">
                     <label htmlFor="date">Date</label>
                     <input type="text" required="true"
@@ -82,8 +105,9 @@ export default class EventForm extends Component {
                        }
                     </select>
                  </div> */}
-                 <button type="submit" onClick={this.MakeNewEvent} className="btn btn-primary">Submit</button>
+                 <button type="submit" onClick={this.MakeNewMessage} className="btn btn-primary">Submit</button>
               </form>
+              </div>
            </React.Fragment>
         )
      }
