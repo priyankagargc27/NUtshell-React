@@ -26,6 +26,8 @@ export default class ArticleForm extends Component {
              title:this.state.title,
              Description:this.state.Description,
              url:this.state.url
+            //  let user = JSON.parse(sessionStorage.getItem("activeUser"))
+            //  userId:this.state.user.id
          
          
             }
@@ -41,6 +43,7 @@ export default class ArticleForm extends Component {
      render() {
         return (
            <React.Fragment>
+               <div className="articleContainer">
                  <h3>Articles</h3>
               <form className="articleForm">
                  <div className="form-group">
@@ -84,6 +87,7 @@ export default class ArticleForm extends Component {
                  </div> */}
                  <button type="submit" onClick={this.MakeNewArticle} className="btn btn-primary">Submit</button>
               </form>
+              </div>
            </React.Fragment>
         )
      }

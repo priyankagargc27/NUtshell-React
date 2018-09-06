@@ -18,13 +18,22 @@ export default class ArticleList extends Component {
                                         {article.Description}
                                     </section>
                                     <h6>
-                                        <Link className="nav-link" to={`/articles/${article.url}`}> Article URL</Link>
+                                        <Link className="nav-link" to={`/articles/${article.url}`}>Details</Link>
                                     </h6>
-                                    {/* <h6>
-                                        <p></p>
+                                    <h6>
+                                    
                                         <button type="button" className="btn btn-primary"
-                                            onClick={() => this.props.deleteArticle(article.id, "articles")}>Delete Article</button>
-                                    </h6> */}
+                                            onClick={() => this.props.deleteArticle(article.id, "articles")}>Delete</button>
+                                    
+
+                                    <button type="button" className="btn btn-primary"
+                                            onClick={() => this.props.history.push(`/articles/Edit/${article.id}`)}>Edit</button>
+                            {/* //         <a href="#"
+                            // onClick={() =>  this.props.history.push(`/articles/Edit/${article.id}`)}
+                        
+                            //     className="card-link">Edit</a> */}
+
+                                    </h6> 
                                 </div>
                             </div>
                         )

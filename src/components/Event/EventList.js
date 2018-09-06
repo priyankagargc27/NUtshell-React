@@ -15,11 +15,14 @@ export default class EventList extends Component {
                                         {event.EventType}
                                     </h5>
                                     <time>${event.date}</time>
-                                    {/* <h6>
-                                        <p></p>
+                                    <h6>
+                                    
                                         <button type="button" className="btn btn-primary"
-                                            onClick={() => this.props.deleteArticle(article.id, "articles")}>Delete Article</button>
-                                    </h6> */}
+                                            onClick={() => this.props.deleteEvent(event.id, "events")}>Delete</button>
+
+                                             <button type="button" className="btn btn-primary"
+                                            onClick={() => this.props.history.push(`/events/Edit/${event.id}`)}>Edit</button>
+                                    </h6>
                                 </div>
                             </div>
                         )

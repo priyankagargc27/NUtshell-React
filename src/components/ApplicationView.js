@@ -3,8 +3,11 @@ import { Route, Redirect } from "react-router-dom"
 
 import ArticleForm from "./Article/ArticleForm"
 import ArticleList from "./Article/ArticleList"
+import ArticleEditForm from './Article/ArticleEditForm'
 import EventForm from "./Event/EventForm"
 import EventList from "./Event/EventList"
+import EventEditForm from './Event/EventEditForm'
+//import Joke from './Jokes/Joke'
 import React, { Component } from "react"
 import Login from './Login/Login'
 import './ApplicationView.css'
@@ -50,6 +53,24 @@ export default class ApplicationViews extends Component {
             articles: articles
 
         }))
+
+
+        deleteArticle = id => APIManager.Delete("articles",id)
+    .then(() => {
+        APIManager.getAll("articles")
+        .then(articles => this.setState({
+            articles: articles
+        }))
+    })
+
+    EditArticle = (id, object) => {
+        return APIManager.edit("articles", id, object)
+        .then(() => 
+            APIManager.getAll("articles"))
+        .then(articles =>
+            this.setState({ articles: articles })
+            )
+    }
         
         
         addEvents = event => APIManager.post("events", event)
@@ -58,6 +79,23 @@ export default class ApplicationViews extends Component {
             events: events
 
         }))
+
+        deleteEvent = id => APIManager.Delete("events",id)
+    .then(() => {
+        APIManager.getAll("events")
+        .then(events => this.setState({
+            events: events
+        }))
+    })
+
+    EditEvent = (id, object) => {
+        return APIManager.edit("events", id, object)
+        .then(() => 
+            APIManager.getAll("events"))
+        .then(events =>
+            this.setState({ events: events })
+            )
+    }
 
 
 
@@ -68,11 +106,22 @@ export default class ApplicationViews extends Component {
             <React.Fragment>
                 <Route path="/login" component={Login} />
 
+                {/* <Route exact path="/" render={(props) => {
+                    if (this.isAuthenticated()) {
+                        return <Joke {...props}/> 
+
+                } else {
+                    return <Redirect to ="/login"/>
+                }
+            }}/> */}
+
                 <Route exact path="/articles" render={(props) => {
                     if (this.isAuthenticated()) {
                         return <ArticleList {...props}
-                            //deleteArticle={this.deleteArticle}
-                            articles={this.state.articles} />
+                            deleteArticle={this.deleteArticle}
+                            articles={this.state.articles}
+                            EditArticle={this.EditArticle}
+                             />
                     } else {
                         return <Redirect to="/login" />
                     }
@@ -82,11 +131,18 @@ export default class ApplicationViews extends Component {
                         addArticle={this.addArticle} />
                 }} />
 
+                <Route path="/articles/Edit/:articleId(\d+)" render={(props) => {
+                        return <ArticleEditForm {...props}
+                            articles={this.state.articles}
+                            EditArticle={this.EditArticle}/>
+                             //employees={this.state.employees} />
+                    }} />
+
 
                  <Route exact path="/events" render={(props) => {
                     if (this.isAuthenticated()) {
                         return <EventList {...props}
-                            //deleteArticle={this.deleteArticle}
+                            deleteEvent={this.deleteEvent}
                             events={this.state.events} />
                     } else {
                         return <Redirect to="/login" />
@@ -96,6 +152,14 @@ export default class ApplicationViews extends Component {
                     return <EventForm {...props}
                         addEvents={this.addEvents} />
                 }} />
+
+
+                 <Route path="/events/Edit/:eventId(\d+)" render={(props) => {
+                        return <EventEditForm {...props}
+                            events={this.state.events}
+                            EditEvent={this.EditEvent}/>
+                             //employees={this.state.employees} />
+                    }} />
             </React.Fragment>
         )
     }

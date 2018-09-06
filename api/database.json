@@ -9,50 +9,36 @@
       "email": "me@gmail.com",
       "password": "12345",
       "id": 2
+    },
+    {
+      "email": "me@gmail.com",
+      "password": "1445",
+      "id": 3
+    },
+    {
+      "email": "me@gmail.com",
+      "password": "12345",
+      "id": 4
     }
   ],
   "articles": [
     {
-      "title": "NAshville Downtown",
-      "Description": "",
-      "url": "https://www.travelchannel.com/destinations/us/tn/nashville/articles/nashville-neighborhoods",
-      "id": 7
-    },
-    {
-      "title": "hjhj",
-      "Description": "",
-      "url": "lljhjhjhjk",
+      "title": "Cohort 28",
+      "Description": "test3",
+      "url": "http://nashvillesoftwareschool.com/",
       "id": 8
     },
     {
-      "title": "hhjgj",
-      "Description": "",
-      "url": "jghj",
+      "title": "Cohort 27",
+      "Description": "Nashville",
+      "url": "http://nashvillesoftwareschool.com/",
       "id": 9
-    },
-    {
-      "title": "ihiui",
-      "Description": "",
-      "url": "hbjhbjh",
-      "id": 10
-    },
-    {
-      "title": "test",
-      "Description": "",
-      "url": "http://nashvillesoftwareschool.com/",
-      "id": 11
-    },
-    {
-      "title": "test1",
-      "Description": "test",
-      "url": "http://nashvillesoftwareschool.com/",
-      "id": 12
     }
   ],
   "events": [
     {
-      "EventType": "test",
-      "date": "2018-09-13",
+      "EventType": "test2",
+      "date": "2018-09-07",
       "id": 1
     }
   ]
