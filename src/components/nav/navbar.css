@@ -1,6 +1,16 @@
 /* .nav-link{
     margin-left:1100px;
 } */
-.nav-Link  {
-      color:red;
+.nav.nav-pills li{
+        color:red;
+}
+
+nav{
+    background-color:goldenrod;
+} 
+a.nav-link{
+    color:brown;
+}
+#logout{
+    color:yellow;
 }

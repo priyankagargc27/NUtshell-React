@@ -18,6 +18,7 @@ export default class EventList extends Component {
                                         {message.Messageinput}
                                     </h5>
                                      <time>Sent on:{message.time}</time>
+                                     <p>{message.userName}</p>
 
 
                                     <h6>

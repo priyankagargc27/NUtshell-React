@@ -47,6 +47,7 @@ export default class Login extends Component {
                     name: this.state.name,
                     email: this.state.email,
                     password: this.state.password,
+                    id:this.state.id
                 })
             )
 
@@ -57,6 +58,7 @@ export default class Login extends Component {
                     name: this.state.name,
                     email: this.state.email,
                     password: this.state.password,
+                    id:this.state.id
                 })
             )
         }
@@ -91,7 +93,7 @@ export default class Login extends Component {
                  </label>
                     <input onClick={() => (this.setState({ isChecked: true }))} type="checkbox" id="myCheck" />
                     <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                    <p className="mt-5 mb-3 text-muted">© 2018-2019</p>
+                   
                 </form>
             </div>
         )

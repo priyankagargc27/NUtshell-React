@@ -7,8 +7,8 @@ export default class EventForm extends Component {
 
     state={
         Messageinput: "",
-        time:""
-    }
+        time:"",
+    user:""    }
 
 
 
@@ -41,7 +41,8 @@ export default class EventForm extends Component {
          evt.preventDefault()
          const message = {
             Messageinput:this.state.Messageinput,
-            time: new Date().toLocaleString()
+            time: new Date().toLocaleString(),
+            //userId: this.props.users.find(u => u.name === this.state.user).id
             //time:Date.now()
          
          
@@ -69,7 +70,7 @@ export default class EventForm extends Component {
                        onChange={this.handleFieldChange}
                        id="Messageinput"
                        placeholder="Write a Message" />
-                 </div>
+                        </div>
 
 
                  {/* <a onclick="evt" href="#">SET TIME</a>

@@ -1,38 +1,6 @@
 {
   "users": [
     {
-      "email": "priyanka.g.85@gmail.com",
-      "password": "1234",
-      "id": 1
-    },
-    {
-      "email": "me@gmail.com",
-      "password": "12345",
-      "id": 2
-    },
-    {
-      "email": "me@gmail.com",
-      "password": "1445",
-      "id": 3
-    },
-    {
-      "email": "me@gmail.com",
-      "password": "12345",
-      "id": 4
-    },
-    {
-      "name": "",
-      "email": "Priyanka Garg",
-      "password": "1445",
-      "id": 5
-    },
-    {
-      "name": "",
-      "email": "me@gmail.com",
-      "password": "123456",
-      "id": 6
-    },
-    {
       "name": "Priyanka",
       "email": "me@gmail.com",
       "password": "1445",
@@ -43,6 +11,36 @@
       "email": "me@gmail.com",
       "password": "1445",
       "id": 8
+    },
+    {
+      "name": "Priyanka",
+      "email": "me@gmail.com",
+      "password": "1445",
+      "id": 9
+    },
+    {
+      "name": "Priyanka Garg",
+      "email": "priyanka.g.85@gmail.com",
+      "password": "1234",
+      "id": 10
+    },
+    {
+      "name": "",
+      "email": "priyanka.g.85@gmail.com",
+      "password": "1234",
+      "id": 11
+    },
+    {
+      "name": "Priyanka Garg",
+      "email": "priyanka.g.85@gmail.com",
+      "password": "1234",
+      "id": 12
+    },
+    {
+      "name": "",
+      "email": "priyanka.g.85@gmail.com",
+      "password": "1234",
+      "id": 13
     }
   ],
   "articles": [
@@ -64,38 +62,33 @@
       "EventType": "Demo day",
       "date": "2018-09-17",
       "id": 2
+    },
+    {
+      "EventType": "test2",
+      "date": "2018-09-20",
+      "id": 3
     }
   ],
   "messages": [
     {
-      "Messageinput": "How r u?",
-      "time": "9/6/2018, 3:23:53 PM",
-      "id": 1
-    },
-    {
-      "Messageinput": "hi",
-      "time": "9/6/2018, 3:24:52 PM",
-      "id": 2
+      "Messageinput": "I am fine ",
+      "time": "9/7/2018, 11:15:38 AM",
+      "id": 13
     },
     {
       "Messageinput": "go away",
-      "time": "9/6/2018, 3:29:25 PM",
-      "id": 3
-    },
-    {
-      "Messageinput": "How r u?",
-      "time": "9/6/2018, 3:35:20 PM",
-      "id": 4
+      "time": "9/7/2018, 11:15:31 AM",
+      "id": 14
     },
     {
       "Messageinput": "hello",
-      "time": "9/6/2018, 3:42:28 PM",
-      "id": 5
+      "time": "9/7/2018, 11:39:28 AM",
+      "id": 15
     },
     {
       "Messageinput": "hello",
-      "time": "9/6/2018, 3:49:04 PM",
-      "id": 6
+      "time": "9/7/2018, 11:43:01 AM",
+      "id": 17
     }
   ]
 }

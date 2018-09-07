@@ -14,7 +14,7 @@ export default class MessageEditForm extends Component {
 
     state = {
         Messageinput: "",
-       
+        time:""
     }
 
 
@@ -46,6 +46,7 @@ export default class MessageEditForm extends Component {
         } else {
             const editMessage = {
                 Messageinput:this.state.Messageinput,
+                time: new Date().toLocaleString()
              
              
             }
@@ -58,12 +59,9 @@ export default class MessageEditForm extends Component {
     }
     componentDidMount(){
     const message = this.props.messages.find(a => a.id === parseInt(this.props.match.params.messageId)) 
-     || {}
-     const user = this.props.users.find(e => e.id === message.user)
+    // || {}
+    // const employee = this.props.employees.find(e => e.id === animal.employee)
     console.log(message)
-    console.log(user)
-
-
         console.log(this.props);
 
     this.setState({
@@ -85,11 +83,6 @@ export default class MessageEditForm extends Component {
                                placeholder=" Edit Your Message" />
                     </div>
                 
-                    <label htmlFor="user">user name</label>
-                    {
-                            
-                            this.props.users.map (user => <h5 key={user.id}>{user.name}</h5>)
-                        }
 
 
 

@@ -200,7 +200,7 @@ export default class ApplicationViews extends Component {
 
 
 
-                    <Route exact path="/" render={(props) => {
+                    <Route exact path="/messages" render={(props) => {
                     if (this.isAuthenticated()) {
                         return <MessageList {...props}
                             deleteMessage={this.deleteMessage}
